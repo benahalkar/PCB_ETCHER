@@ -1,6 +1,7 @@
 # Custome files
 .vscode/
 misc/
+.gitignore
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
