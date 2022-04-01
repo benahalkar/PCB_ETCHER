@@ -1,3 +1,11 @@
+/*
+    NAME : PCB Etcher Code for Arduino-Nano
+    AUTHOR : HARSH BENAHALKAR
+
+    VERSION : 1.0.0
+    CHANGED ON : 29-03-2022 
+*/
+
 #include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
@@ -28,7 +36,6 @@ int etcher_mode, pulse_high_time, pulse_low_time, etching_time, button_trigger, 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 void setup() {
-  // put your setup code here, to run once:
   pinMode(ADC1, INPUT);
   pinMode(ADC2, INPUT);
   pinMode(ADC3, INPUT);
@@ -38,6 +45,7 @@ void setup() {
   pinMode(LED_Y, OUTPUT);
   pinMode(LED_G, OUTPUT);
   pinMode(MOTOR, OUTPUT);
+
   Serial.begin(9600);
   etcher_mode = false;
   digitalWrite(BUZZER, LOW);
@@ -49,12 +57,9 @@ void setup() {
   display.clearDisplay();
   display.display();
   delay(2000);
-
-//  testdrawstyles();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   if(etcher_mode == false){
     digitalWrite(LED_Y, HIGH);                                                                
     digitalWrite(LED_G, LOW);
@@ -111,7 +116,7 @@ void loop() {
       while(analogRead(BUTTON) > 512){}
       delay(50);
       etcher_mode = true;
-      Serial.println("Button pressed...going into etching mode");
+      Serial.println("Button press detected...going into etching mode");
     }    
   }
   else{
