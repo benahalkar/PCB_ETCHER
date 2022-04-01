@@ -1,0 +1,14 @@
+
+29-03-2022 ==============================================================================
+-----------------------
+v1.0.0 : 
+* Initial Draft
+-----------------------
+
+01-04-2022 ==============================================================================
+-----------------------
+v1.0.1 :
+* Optimized PCB BRD and routing
+* Added gridlines to PCB BRD for better understanding of routing
+* Updated BOM by adding MOTOR and updating part names
+-----------------------
