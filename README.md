@@ -3,9 +3,7 @@
 ## CURRENT VERSION : 1.0.2
 ## All updates made to this project are mentioned in the **versionlist.txt** file.
 
-## ========
 ## ABOUT ME
-## ========
 * A controller based programmable PCB etcher.
 * Etching is a PCB making process through which PCBs can be made. 
 * Etching-a-PCB method is great for prototyping or creating simple PCBs yourself.
@@ -18,26 +16,19 @@
 * After the hardware is created...debug the same using example codes provided in the **/code files/examples** folder.
 * After all peripherals are tested...upload the controller.ino code provided in the **/code files/controller** folder.
 
-## =======================
 ## STEPS TO MAKE THE BOARD
-## =======================
 * Schematic Diagrams, Bill Of Materials, Board Routing files are provided in the **/PCB files** folder.
 * Create a PCB either via Etching, GPP, or by paying a professional to create it for you.
 *NOTE: The routing of the board has been done specifically to accomodate GPP boards...for those hobbyists who cannot purchase or etch PCBs.*
 * Assemble and solder all the components.
 
-## =========================
 ## STEPS TO RUN THE SOFTWARE
-## =========================
 * Download the zip files provided in the **/code files/libraries** directory and add them to the Arduino library.
 * The files mentioned above are the library files required for driving the OLED.
 * Open the **controller.ino** file through the arduino software and upload the code to your Arduino Nano controller.
 * The device is now ready!
 
-## =====================
 ## HOW TO USE THE DEVICE
-## =====================
-
 !(https://github.com/benahalkar/PCB_ETCHER/blob/main/images/PWM.jpg)
 
 * Initially the device starts in SETUP mode.
