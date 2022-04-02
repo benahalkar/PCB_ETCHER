@@ -1,8 +1,9 @@
 # Custome files
 .vscode/
 misc/
-todo.txt
 buglist.xlsx
+todo.txt
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
