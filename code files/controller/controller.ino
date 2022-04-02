@@ -1,9 +1,12 @@
 /*
-    NAME : PCB Etcher Code for Arduino-Nano
-    AUTHOR : HARSH BENAHALKAR
+__________________________________________________________________________________
+                     |
+    APPLICATION NAME | PCB Etcher Code for Arduino-Nano
+              AUTHOR | Harsh Benahalkar
+                     |
+          CREATED ON | 29-03-2022 
+_____________________|____________________________________________________________
 
-    VERSION : 1.0.0
-    CHANGED ON : 29-03-2022 
 */
 
 #include <SPI.h>
@@ -26,9 +29,9 @@ int LED_Y          =  6; // pin connected to yellow indicator led
 int LED_G          =  5; // pin connected to green indicator led
 int MOTOR          =  8; // pin connected to MOSFET that controls the vibration motor
 int pulse_high_MIN =  0; // time in seconds
-int pulse_high_MAX = 20; // time in seconds
+int pulse_high_MAX = 10; // time in seconds
 int pulse_low_MIN  =  0; // time in seconds
-int pulse_low_MAX  = 20; // time in seconds
+int pulse_low_MAX  = 10; // time in seconds
 int TIME_MIN       =  0; // time in minutes
 int TIME_MAX       = 60; // time in minutes
 
@@ -51,8 +54,8 @@ void setup() {
   digitalWrite(BUZZER, LOW);
 
   if(!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
-    Serial.println(F("SSD1306 allocation failed"));
-    for(;;); // Don't proceed, loop forever
+    Serial.println(F("SSD1306 allocation failed...will not proceed further now"));
+    for(;;);
   }
   display.clearDisplay();
   display.display();
@@ -63,25 +66,26 @@ void loop() {
   if(etcher_mode == false){
     digitalWrite(LED_Y, HIGH);                                                                
     digitalWrite(LED_G, LOW);
+    digitalWrite(LED_R, LOW);
     digitalWrite(BUZZER, LOW);
     
     pulse_high_time = int((float(analogRead(ADC1))/1020.0)*(pulse_high_MAX - pulse_high_MIN)) + pulse_high_MIN;
     pulse_low_time = int((float(analogRead(ADC2))/1020.0)*(pulse_low_MAX - pulse_low_MIN)) + pulse_low_MIN;
     etching_time = int((float(analogRead(ADC3))/1020.0)*(TIME_MAX - TIME_MIN) + TIME_MIN)*60;
     
-    Serial.print("pulse high time: ");
-    Serial.print(pulse_high_time);
-    Serial.print(" | pulse low time: ");
-    Serial.print(pulse_low_time);
-    Serial.print(" | etching time: ");
-    Serial.println(etching_time);
-    Serial.print("RAW ADC VALUES : ");
-    Serial.print(analogRead(ADC1));
-    Serial.print(" | ");
-    Serial.print(analogRead(ADC2));
-    Serial.print(" | ");
-    Serial.println(analogRead(ADC3));
-    Serial.println("");
+    // Serial.print("pulse high time: ");
+    // Serial.print(pulse_high_time);
+    // Serial.print(" | pulse low time: ");
+    // Serial.print(pulse_low_time);
+    // Serial.print(" | etching time: ");
+    // Serial.println(etching_time);
+    // Serial.print("RAW ADC VALUES : ");
+    // Serial.print(analogRead(ADC1));
+    // Serial.print(" | ");
+    // Serial.print(analogRead(ADC2));
+    // Serial.print(" | ");
+    // Serial.println(analogRead(ADC3));
+    // Serial.println("");
     
     display.clearDisplay();
     display.setTextSize(2);
@@ -116,12 +120,13 @@ void loop() {
       while(analogRead(BUTTON) > 512){}
       delay(50);
       etcher_mode = true;
-      Serial.println("Button press detected...going into etching mode");
+    //   Serial.println("Button press detected...going into etching mode");
     }    
   }
   else{
     digitalWrite(LED_G, HIGH);
     digitalWrite(LED_Y, LOW);
+    digitalWrite(LED_R, LOW);
     while(etching_time > 0){
 //      if(button_trigger > 512){
 //        while(analogRead(BUTTON) > 512){}

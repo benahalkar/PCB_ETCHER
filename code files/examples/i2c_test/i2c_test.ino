@@ -8,7 +8,6 @@ void setup()
   Serial.println("\nI2C Scanner");
 }
  
- 
 void loop()
 {
   byte error, address;
