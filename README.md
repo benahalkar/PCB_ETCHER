@@ -43,7 +43,7 @@
 * During Etching mode, the time left is displayed on the OLED.
 * After the etching process is completed, the BUZZER will be activated and shall remain so until the user presses the button again. This has been done to ensure that the etching process is not over-done.
 
-=================================================================\
+=================================================================
 
 If you have further queries...then do not hesitate to contact me on mail.
 
