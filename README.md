@@ -45,6 +45,4 @@
 
 =================================================================
 
-If you have further queries...then do not hesitate to contact me on mail.
-
 This application has been designed to act as a simple solution to automate the etching process; however, do let me know if you have any suggestions on improving the application.
