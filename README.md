@@ -1,7 +1,7 @@
 # PCB ETHCHER
 
-## CURRENT VERSION : 1.0.2
-## All updates made to this project are mentioned in the **versionlist.txt** file.
+###### CURRENT VERSION : 1.0.2
+###### All updates made to this project are mentioned in the **versionlist.txt** file.
 
 ## ABOUT ME
 * A controller based programmable PCB etcher.
@@ -18,7 +18,7 @@
 
 ## STEPS TO MAKE THE BOARD
 * Schematic Diagrams, Bill Of Materials, Board Routing files are provided in the **/PCB files** folder.
-* Create a PCB either via Etching, GPP, or by paying a professional to create it for you.
+* Create a PCB either via Etching, GPP, or by paying a professional to create it for you.\
 *NOTE: The routing of the board has been done specifically to accomodate GPP boards...for those hobbyists who cannot purchase or etch PCBs.*
 * Assemble and solder all the components.
 
@@ -29,7 +29,7 @@
 * The device is now ready!
 
 ## HOW TO USE THE DEVICE
-!(https://github.com/benahalkar/PCB_ETCHER/blob/main/images/PWM.jpg)
+![Img](https://github.com/benahalkar/PCB_ETCHER/blob/main/images/PWM.jpg)
 
 * Initially the device starts in SETUP mode.
 * Here, you can set the parameters of the etching process with the help of 3 trimmers/potentiometers.
@@ -43,7 +43,8 @@
 * During Etching mode, the time left is displayed on the OLED.
 * After the etching process is completed, the BUZZER will be activated and shall remain so until the user presses the button again. This has been done to ensure that the etching process is not over-done.
 
-=================================================================
+=================================================================\
+
 If you have further queries...then do not hesitate to contact me on mail.
 
 This application has been designed to act as a simple solution to automate the etching process; however, do let me know if you have any suggestions on improving the application.
